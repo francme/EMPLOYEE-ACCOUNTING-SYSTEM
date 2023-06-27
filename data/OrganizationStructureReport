@@ -1,0 +1,27 @@
+Organization Structure Report
+
+CEO:
+John Doe
+Win Wong
+
+CHIEF ACCOUNTANT:
+Kara Black
+
+Department CEO:
+John Doe - CEO
+Win Wong - CEO
+Olga Ring - MANAGER
+
+Department ACCOUNTING:
+Kara Black - CHIEF_ACCOUNTANT
+Sarah Wong - ACCOUNTANT
+
+Department SALES:
+Jane Smith - DEPARTMENT_MANAGER
+Jack Li - MANAGER
+Anna Frank - OTHER_STAFF
+
+Department PRODUCTION:
+Alex White - DEPARTMENT_MANAGER
+Yan Young - MASTER
+Max White - MASTER

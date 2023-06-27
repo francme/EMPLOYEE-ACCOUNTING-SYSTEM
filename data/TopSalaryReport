@@ -1,0 +1,6 @@
+Top-5 Salary Report
+Win Wong     , Department: CEO        , Position: CEO                , Supervisor: John Doe    , HireDate: 2008-01-22, Salary:   11000, Contact Number: +1234567890  , Date Of Birth: 1980-08-02, Gender: MALE
+John Doe     , Department: CEO        , Position: CEO                , Supervisor: -           , HireDate: 2008-07-20, Salary:   10000, Contact Number: +1234567890  , Date Of Birth: 1975-11-22, Gender: MALE
+Kara Black   , Department: ACCOUNTING , Position: CHIEF_ACCOUNTANT   , Supervisor: John Doe    , HireDate: 2012-07-10, Salary:    8000, Contact Number: +1237770077  , Date Of Birth: 1981-02-10, Gender: FEMALE
+Anna Frank   , Department: SALES      , Position: OTHER_STAFF        , Supervisor: John Doe    , HireDate: 2020-10-27, Salary:    8000, Contact Number: +1233333333  , Date Of Birth: 1999-06-21, Gender: FEMALE
+Jane Smith   , Department: SALES      , Position: DEPARTMENT_MANAGER , Supervisor: John Doe    , HireDate: 2001-12-20, Salary:    7000, Contact Number: +1235550055  , Date Of Birth: 1992-08-17, Gender: FEMALE

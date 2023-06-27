@@ -4,23 +4,22 @@ import EmployeeAccountingSystem.Enum.Department;
 import EmployeeAccountingSystem.Enum.Gender;
 import EmployeeAccountingSystem.Enum.Position;
 
-import java.util.Date;
 
 // Класс, представляющий информацию о сотруднике
 class Employee {
     private String fullName;
-    private Date dateOfBirth;
+    private String dateOfBirth;
     private Gender gender;
     private String contactNumber;
     private Position position;
     private Department department;
     private String supervisor;
-    private Date hireDate;
+    private String hireDate;
     private double salary;
 
     // Конструктор
-    public Employee(String fullName, Date dateOfBirth, Gender gender, String contactNumber, Position position,
-                    Department department, String supervisor, Date hireDate, double salary) {
+    public Employee(String fullName, String dateOfBirth, Gender gender, String contactNumber, Position position,
+                    Department department, String supervisor, String hireDate, double salary) {
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
@@ -41,11 +40,11 @@ class Employee {
         this.fullName = fullName;
     }
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
+    public String getDateOfBirth() {
+        return String.valueOf(dateOfBirth);
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -89,11 +88,11 @@ class Employee {
         this.supervisor = supervisor;
     }
 
-    public Date getHireDate() {
+    public String getHireDate() {
         return hireDate;
     }
 
-    public void setHireDate(Date hireDate) {
+    public void setHireDate(String hireDate) {
         this.hireDate = hireDate;
     }
 
@@ -107,14 +106,14 @@ class Employee {
 
     @Override
     public String toString() {
-        return "Employee: " + fullName +
-                "| department " + department +
-                "| position " + position +
-                "| supervisor " + supervisor +
-                "| hireDate " + hireDate +
-                "| salary " + salary +
-                "| contactNumber " + contactNumber +
-                "| dateOfBirth " + dateOfBirth +
-                "| gender " + gender;
+        return String.format("%-13s", fullName) +
+                ", Department: " + String.format("%-11s", department) +
+                ", Position: " + String.format("%-19s",position) +
+                ", Supervisor: " + String.format("%-12s", supervisor) +
+                ", HireDate: " +  hireDate +
+                ", Salary: " + String.format("%7d", (int)salary) +
+                ", Contact Number: " + String.format("%-13s",contactNumber) +
+                ", Date Of Birth: " + dateOfBirth +
+                ", Gender: " + gender;
     }
 }
