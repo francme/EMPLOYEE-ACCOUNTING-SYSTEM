@@ -13,7 +13,7 @@ public class Input {
     public static int digitOfChoose() {
         Scanner scanner = new Scanner(System.in);
         while (!scanner.hasNext("[0-9]+")) {
-            System.out.println("You're input not a digit." +
+            System.out.println("You're input not a digit!" +
                     "\nInput some digit as your choose from menu:");
             scanner.next();
         }

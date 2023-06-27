@@ -9,7 +9,7 @@ public class LoginPassword {
     private static final String PASSWORD_ADMIN = new String("adm");
 
     public static boolean userIdentification() {
-        System.out.println("\nInput login, please: ");
+        System.out.println("\nInput Login, please: ");
         String login = new Scanner(System.in).nextLine().trim();
         if (!login.equals(LOGIN_ADMIN)) {
             System.out.println(Ansi.WHITE_BRIGHT +"User with this login doesn't exist" +
@@ -18,7 +18,7 @@ public class LoginPassword {
         } else {
             String password;
             do {
-                System.out.println("Input password, please: ");
+                System.out.println("Input Password, please: ");
                 password = new Scanner(System.in).nextLine().trim();
                 if (!password.equals(PASSWORD_ADMIN)) {
                     System.out.println(Ansi.ANSI_RED + "Incorrect password!" +

@@ -5,7 +5,7 @@ import EmployeeAccountingSystem.Enum.Gender;
 import EmployeeAccountingSystem.Enum.Position;
 
 
-// Класс, представляющий информацию о сотруднике
+// Класс, представляющий информацию о сотруднике:
 class Employee {
     private String fullName;
     private String dateOfBirth;
@@ -111,7 +111,7 @@ class Employee {
                 ", Position: " + String.format("%-19s",position) +
                 ", Supervisor: " + String.format("%-12s", supervisor) +
                 ", HireDate: " +  hireDate +
-                ", Salary: " + String.format("%7d", (int)salary) +
+                ", Salary: " + String.format("%6d", (int)salary) +
                 ", Contact Number: " + String.format("%-13s",contactNumber) +
                 ", Date Of Birth: " + dateOfBirth +
                 ", Gender: " + gender;

@@ -408,7 +408,7 @@ class EmployeeManagementSystem {
         try {
             fileWriter = new FileWriter(path);
 
-                fileWriter.write("Average Salary Report\n" + String.valueOf(averageSalary));
+                fileWriter.write("Average Salary Report\n" + averageSalary);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

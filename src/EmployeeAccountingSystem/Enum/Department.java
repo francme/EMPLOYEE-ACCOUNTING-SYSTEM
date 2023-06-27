@@ -4,5 +4,6 @@ public enum Department {
     CEO,
     ACCOUNTING,
     PRODUCTION,
-    SALES
+    SALES,
+    OTHER
 }

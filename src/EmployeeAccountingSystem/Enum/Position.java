@@ -8,6 +8,7 @@ public enum Position {
     DEPARTMENT_MANAGER,
     MANAGER,
     MASTER,
-    OTHER_STAFF
+    OTHER_STAFF,
+    JUNIOR
 
 }
