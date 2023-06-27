@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.text.ParseException;
 
 import java.util.Locale;
-import java.util.Scanner;
 
 import static EmployeeAccountingSystem.ConsoleColors.Ansi.*;
+import static EmployeeAccountingSystem.Input.digitOfChoose;
 
 
 public class Main {
@@ -17,11 +17,13 @@ public class Main {
         EmployeeManagementSystem system = new EmployeeManagementSystem();
 
         System.out.println(PURPLE_BRIGHT + "\n *** EMPLOYEE ACCOUNTING SYSTEM ***" +
-                ("\nWelcome to Employee Accounting System").toUpperCase(Locale.ROOT) +
+                ("\nWelcome to Employee Accounting System :)").toUpperCase(Locale.ROOT) +
                 ANSI_RESET);
 
         if (LoginPassword.userIdentification()) {
-            System.out.println(ANSI_RED + "\n!!!Upload employee information from file, please!!!" + ANSI_RESET);
+            System.out.println(ANSI_RED +
+                    ("\n!!!Upload employee information from file, please!!!").toUpperCase() +
+                    ANSI_RESET);
             while (true) {
                 System.out.println(WHITE_BRIGHT +
                         "\n* CHOOSE SOME OF THE OPTIONS *" +
@@ -35,14 +37,7 @@ public class Main {
                         WHITE_BRIGHT +
                         "\n[0] - Complete" + ANSI_RESET);
 
-                Scanner scanner = new Scanner(System.in);
-                while (!scanner.hasNext("[0-9]+")) {
-                    System.out.println("You're input not a digit!" +
-                            "\nInput some digit as your choose from menu:");
-                    scanner.next();
-                }
-                int choose = scanner.nextInt();
-                switch (choose) {
+                switch (digitOfChoose()) {
                     case 1 -> system.uploadEmployeeInformation();
                     case 2 -> system.hireEmployee();
                     case 3 -> system.fireEmployee();
