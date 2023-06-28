@@ -1,8 +1,8 @@
 package EmployeeAccountingSystem.AccountingSystem;
 
-import EmployeeAccountingSystem.Enum.Department;
-import EmployeeAccountingSystem.Enum.Gender;
-import EmployeeAccountingSystem.Enum.Position;
+import EmployeeAccountingSystem.AccountingSystem.Enum.Department;
+import EmployeeAccountingSystem.AccountingSystem.Enum.Gender;
+import EmployeeAccountingSystem.AccountingSystem.Enum.Position;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static EmployeeAccountingSystem.ConsoleColors.Ansi.*;
-import static EmployeeAccountingSystem.Input.*;
+import static EmployeeAccountingSystem.AccountingSystem.Input.Input.*;
 
 
 // Класс, представляющий систему учета сотрудников

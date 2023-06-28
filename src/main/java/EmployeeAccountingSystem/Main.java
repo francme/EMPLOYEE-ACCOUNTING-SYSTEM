@@ -12,7 +12,7 @@ import static EmployeeAccountingSystem.AccountingSystem.SearchEmployees.*;
 import static EmployeeAccountingSystem.AccountingSystem.UpdateEmployee.*;
 import static EmployeeAccountingSystem.ConsoleColors.Ansi.*;
 import static EmployeeAccountingSystem.AccountingSystem.HireEmployee.*;
-import static EmployeeAccountingSystem.Input.*;
+import static EmployeeAccountingSystem.AccountingSystem.Input.Input.*;
 
 
 public class Main {

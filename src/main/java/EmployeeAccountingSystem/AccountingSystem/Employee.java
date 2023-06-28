@@ -1,8 +1,8 @@
 package EmployeeAccountingSystem.AccountingSystem;
 
-import EmployeeAccountingSystem.Enum.Department;
-import EmployeeAccountingSystem.Enum.Gender;
-import EmployeeAccountingSystem.Enum.Position;
+import EmployeeAccountingSystem.AccountingSystem.Enum.Department;
+import EmployeeAccountingSystem.AccountingSystem.Enum.Gender;
+import EmployeeAccountingSystem.AccountingSystem.Enum.Position;
 
 
 // Класс, представляющий информацию о сотруднике:

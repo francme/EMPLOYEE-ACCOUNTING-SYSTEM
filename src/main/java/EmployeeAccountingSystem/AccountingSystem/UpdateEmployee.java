@@ -1,15 +1,15 @@
 package EmployeeAccountingSystem.AccountingSystem;
 
-import EmployeeAccountingSystem.Enum.Department;
-import EmployeeAccountingSystem.Enum.Gender;
-import EmployeeAccountingSystem.Enum.Position;
+import EmployeeAccountingSystem.AccountingSystem.Enum.Department;
+import EmployeeAccountingSystem.AccountingSystem.Enum.Gender;
+import EmployeeAccountingSystem.AccountingSystem.Enum.Position;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import static EmployeeAccountingSystem.ConsoleColors.Ansi.*;
-import static EmployeeAccountingSystem.Input.*;
+import static EmployeeAccountingSystem.AccountingSystem.Input.Input.*;
 
 public class UpdateEmployee {
     static EmployeeManagementSystem system = new EmployeeManagementSystem();
@@ -50,6 +50,7 @@ public class UpdateEmployee {
 
             switch (digitInput()) {
                 case 1:
+                    System.out.println("Input new full name: ");
                     employees.get(input - 1).setFullName(inputValue());
                     break;
                 case 2:
@@ -61,6 +62,7 @@ public class UpdateEmployee {
                     employees.get(input - 1).setGender(Gender.valueOf(inputValue()));
                     break;
                 case 4:
+                    System.out.println("Input new contact number: ");
                     employees.get(input - 1).setContactNumber(inputValue());
                     break;
                 case 5:
@@ -76,6 +78,7 @@ public class UpdateEmployee {
                     break;
                 case 7:
                     system.generateSupervisorsReport();
+                    System.out.println("Input new Supervisor: ");
                     employees.get(input - 1).setSupervisor(inputValue());
                     break;
                 case 8:
@@ -83,6 +86,7 @@ public class UpdateEmployee {
                     employees.get(input - 1).setHireDate(dateInput());
                     break;
                 case 9:
+                    System.out.println("Input new salary: ");
                     employees.get(input - 1).setSalary(Double.valueOf(inputValue()));
                     break;
                 case 0:

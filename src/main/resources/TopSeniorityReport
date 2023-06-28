@@ -4,6 +4,6 @@ Jane Smith   , Department: SALES      , Position: DEPARTMENT_MANAGER , Superviso
 John Doe     , Department: CEO        , Position: CEO                , Supervisor: not         , HireDate: 2008-07-20, Salary:  10000, Contact Number: 1234567890   , Date Of Birth: 1975-11-22, Gender: MALE
 Kara Black   , Department: ACCOUNTING , Position: CHIEF_ACCOUNTANT   , Supervisor: John Doe    , HireDate: 2012-07-10, Salary:   8000, Contact Number: 1237770077   , Date Of Birth: 1981-02-10, Gender: FEMALE
 Don Black    , Department: PRODUCTION , Position: MANAGER            , Supervisor: Alex White  , HireDate: 2014-04-30, Salary:   6500, Contact Number: 79995550055  , Date Of Birth: 2000-12-10, Gender: MALE
-Jack Li      , Department: SALES      , Position: MANAGER            , Supervisor: Jane Smith  , HireDate: 2018-01-15, Salary:   3000, Contact Number: 1235550066   , Date Of Birth: 1993-02-20, Gender: MALE
+Jack Li      , Department: SALES      , Position: MANAGER            , Supervisor: Jane Smith  , HireDate: 2018-01-15, Salary:   6500, Contact Number: 1235550066   , Date Of Birth: 1993-02-20, Gender: MALE
 
 Report creation date: 2023-06-28

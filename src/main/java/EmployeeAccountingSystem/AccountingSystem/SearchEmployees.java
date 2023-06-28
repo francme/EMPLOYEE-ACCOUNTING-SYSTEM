@@ -1,16 +1,15 @@
 package EmployeeAccountingSystem.AccountingSystem;
 
-import EmployeeAccountingSystem.Enum.Department;
-import EmployeeAccountingSystem.Enum.Position;
+import EmployeeAccountingSystem.AccountingSystem.Enum.Department;
+import EmployeeAccountingSystem.AccountingSystem.Enum.Position;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 import static EmployeeAccountingSystem.ConsoleColors.Ansi.*;
-import static EmployeeAccountingSystem.Input.digitInput;
+import static EmployeeAccountingSystem.AccountingSystem.Input.Input.digitInput;
 
 public class SearchEmployees {
     static EmployeeManagementSystem system = new EmployeeManagementSystem();
@@ -47,22 +46,47 @@ public class SearchEmployees {
                     }
                 }
                 case 2 -> {
-                    System.out.println(WHITE_BRIGHT + "Input Position for search:\n" +
-                            ANSI_RESET + Arrays.asList(Position.values()));
-                    String value = new Scanner(System.in).nextLine().trim();
+                    Position position = null;
+                    while (position == null) {
+                        System.out.println("Input position:" +
+                                "\n[1] - CEO\n[2] - CHIEF_ACCOUNTANT\n[3] - ACCOUNTANT" +
+                                "\n[4] - DEPARTMENT_MANAGER\n[5] - MANAGER" +
+                                "\n[6] - MASTER\n[7] - OTHER_STAFF");
+                        switch (digitInput()) {
+                            case 1 -> position = Position.CEO;
+                            case 2 -> position = Position.CHIEF_ACCOUNTANT;
+                            case 3 -> position = Position.ACCOUNTANT;
+                            case 4 -> position = Position.DEPARTMENT_MANAGER;
+                            case 5 -> position = Position.MANAGER;
+                            case 6 -> position = Position.MASTER;
+                            case 7 -> position = Position.OTHER_STAFF;
+                            default -> System.out.println(ANSI_RED + "Invalid input!" + ANSI_RESET);
+                        }
+                    }
                     for (Employee employee : employees) {
-                        if (employee.getPosition().equals(Position.valueOf(value))) {
+                        if (employee.getPosition().equals(position)) {
                             searchResults.add(employee);
                             System.out.println(employee);
                         }
                     }
                 }
                 case 3 -> {
-                    System.out.println(WHITE_BRIGHT + "Input Department for search:\n" +
-                            ANSI_RESET + Arrays.asList(Department.values()));
-                    String value = new Scanner(System.in).nextLine().trim();
+                    Department department = null;
+                    while (department == null) {
+                        System.out.println(WHITE_BRIGHT +
+                                "Input Department for search:\n" +
+                                ANSI_RESET +
+                                "\n[1] - CEO\n[2] - ACCOUNTING\n[3] - PRODUCTION\n[4] - SALES");
+                        switch (digitInput()) {
+                            case 1 -> department = Department.CEO;
+                            case 2 -> department = Department.ACCOUNTING;
+                            case 3 -> department = Department.PRODUCTION;
+                            case 4 -> department = Department.SALES;
+                            default -> System.out.println(ANSI_RED + "Invalid input!" + ANSI_RESET);
+                        }
+                    }
                     for (Employee employee : employees) {
-                        if (employee.getDepartment().equals(Department.valueOf(value))) {
+                        if (employee.getDepartment().equals(department)) {
                             searchResults.add(employee);
                             System.out.println(employee);
                         }

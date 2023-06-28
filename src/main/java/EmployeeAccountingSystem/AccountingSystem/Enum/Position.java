@@ -1,4 +1,4 @@
-package EmployeeAccountingSystem.Enum;
+package EmployeeAccountingSystem.AccountingSystem.Enum;
 
 public enum Position {
 

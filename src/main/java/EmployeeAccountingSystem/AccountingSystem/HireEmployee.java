@@ -1,16 +1,15 @@
 package EmployeeAccountingSystem.AccountingSystem;
 
-import EmployeeAccountingSystem.Enum.Department;
-import EmployeeAccountingSystem.Enum.Gender;
-import EmployeeAccountingSystem.Enum.Position;
+import EmployeeAccountingSystem.AccountingSystem.Enum.Department;
+import EmployeeAccountingSystem.AccountingSystem.Enum.Gender;
+import EmployeeAccountingSystem.AccountingSystem.Enum.Position;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import static EmployeeAccountingSystem.ConsoleColors.Ansi.*;
-import static EmployeeAccountingSystem.Input.dateInput;
-import static EmployeeAccountingSystem.Input.digitInput;
+import static EmployeeAccountingSystem.AccountingSystem.Input.Input.*;
 
 public class HireEmployee {
 
@@ -25,7 +24,7 @@ public class HireEmployee {
         System.out.println(ANSI_PURPLE + "~ HIRE NEW EMPLOYEE ~" + ANSI_RESET);
 
         System.out.println("Input full name of employee: ");
-        String fullName = new Scanner(System.in).nextLine().trim();
+        String fullName = inputValue();
 
         System.out.println("Input Date of Birth <yyyy-mm-dd>: ");
         String dateOfBirth = String.valueOf(dateInput());
@@ -42,7 +41,7 @@ public class HireEmployee {
         }
 
         System.out.println("Input contact number (only digits): ");
-        String contactNumber = new Scanner(System.in).nextLine().trim();
+        String contactNumber = inputValue();
 
         Department department = null;
         while (department == null) {
