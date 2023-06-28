@@ -6,7 +6,7 @@ import java.text.ParseException;
 import java.util.Locale;
 
 import static EmployeeAccountingSystem.ConsoleColors.Ansi.*;
-import static EmployeeAccountingSystem.Input.digitOfChoose;
+import static EmployeeAccountingSystem.Input.digitInput;
 
 
 public class Main {
@@ -22,14 +22,13 @@ public class Main {
 
         if (LoginPassword.userIdentification()) {
             System.out.println(ANSI_RED +
-                    ("\n!!!Upload employee information from file, please!!!").toUpperCase() +
+                    ("\n!!! FIRST upload employee information from file, please !!!").toUpperCase() +
                     ANSI_RESET);
             while (true) {
                 System.out.println(WHITE_BRIGHT +
-                        "\n* CHOOSE SOME OF THE OPTIONS *" +
-                        ANSI_RESET +
-                        "\n[1] - Upload employee information from file" +
-                        "\n[2] - Add employee" +
+                        "\n* CHOOSE SOME OF THE OPTIONS *" + ANSI_RESET +
+                        "\n[1] -" + ANSI_RED + " Upload employee information from file" + ANSI_RESET +
+                        "\n[2] - Hire employee" +
                         "\n[3] - Fire employee" +
                         "\n[4] - Change employee information" +
                         "\n[5] - Search employees by attribute" +
@@ -37,7 +36,7 @@ public class Main {
                         WHITE_BRIGHT +
                         "\n[0] - Complete" + ANSI_RESET);
 
-                switch (digitOfChoose()) {
+                switch (digitInput()) {
                     case 1 -> system.uploadEmployeeInformation();
                     case 2 -> system.hireEmployee();
                     case 3 -> system.fireEmployee();

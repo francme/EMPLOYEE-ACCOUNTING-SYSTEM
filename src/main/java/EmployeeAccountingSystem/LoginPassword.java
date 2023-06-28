@@ -4,6 +4,9 @@ import EmployeeAccountingSystem.ConsoleColors.Ansi;
 
 import java.util.Scanner;
 
+import static EmployeeAccountingSystem.ConsoleColors.Ansi.ANSI_RESET;
+import static EmployeeAccountingSystem.ConsoleColors.Ansi.WHITE_BRIGHT;
+
 public class LoginPassword {
     private static final String LOGIN_ADMIN = new String("adm");
     private static final String PASSWORD_ADMIN = new String("adm");
@@ -12,8 +15,8 @@ public class LoginPassword {
         System.out.println("\nInput Login, please: ");
         String login = new Scanner(System.in).nextLine().trim();
         if (!login.equals(LOGIN_ADMIN)) {
-            System.out.println(Ansi.WHITE_BRIGHT +"User with this login doesn't exist" +
-                    "\nContact to Administrator! Bye!" +Ansi.ANSI_RESET);
+            System.out.println(Ansi.WHITE_BRIGHT +" User with this login not found." +
+                    "\nContact to Administrator! Goodbye!" +Ansi.ANSI_RESET);
             return false;
         } else {
             String password;
@@ -25,7 +28,7 @@ public class LoginPassword {
                             Ansi.ANSI_RESET);
                 }
             } while (!password.equals(PASSWORD_ADMIN));
-            System.out.println("Welcome, " + LOGIN_ADMIN);
+            System.out.println(WHITE_BRIGHT + "WELCOME, " + LOGIN_ADMIN + "!" + ANSI_RESET);
             return true;
         }
     }
