@@ -1,4 +1,4 @@
-package EmployeeAccountingSystem;
+package EmployeeAccountingSystem.AccountingSystem;
 
 import EmployeeAccountingSystem.Enum.Department;
 import EmployeeAccountingSystem.Enum.Gender;

@@ -1,3 +1,5 @@
 /.idea/
 JAVA_EXAM.iml
 /out/
+/target/
+/data/

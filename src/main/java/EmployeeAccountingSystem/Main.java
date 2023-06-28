@@ -1,12 +1,18 @@
 package EmployeeAccountingSystem;
 
+import EmployeeAccountingSystem.AccountingSystem.EmployeeManagementSystem;
+
 import java.io.IOException;
 import java.text.ParseException;
 
 import java.util.Locale;
 
+import static EmployeeAccountingSystem.AccountingSystem.FireEmployee.*;
+import static EmployeeAccountingSystem.AccountingSystem.SearchEmployees.*;
+import static EmployeeAccountingSystem.AccountingSystem.UpdateEmployee.*;
 import static EmployeeAccountingSystem.ConsoleColors.Ansi.*;
-import static EmployeeAccountingSystem.Input.digitInput;
+import static EmployeeAccountingSystem.AccountingSystem.HireEmployee.*;
+import static EmployeeAccountingSystem.Input.*;
 
 
 public class Main {
@@ -37,11 +43,14 @@ public class Main {
                         "\n[0] - Complete" + ANSI_RESET);
 
                 switch (digitInput()) {
-                    case 1 -> system.uploadEmployeeInformation();
-                    case 2 -> system.hireEmployee();
-                    case 3 -> system.fireEmployee();
-                    case 4 -> system.updateEmployee();
-                    case 5 -> system.searchEmployees();
+                    case 1 -> {
+                        system.uploadEmployeeInformation();
+                        system.infoAboutEmployees();
+                    }
+                    case 2 -> hireEmployee();
+                    case 3 -> fireEmployee();
+                    case 4 -> updateEmployee();
+                    case 5 -> searchEmployees();
                     case 6 -> system.chooseGenerateReport();
                     case 0 -> {
                         System.out.println(ANSI_RED + "Completed." + ANSI_RESET);
