@@ -13,4 +13,3 @@ Alex Adams   , Department: SALES      , Position: MASTER             , Superviso
 Ron Ronald   , Department: CEO        , Position: MANAGER            , Supervisor: John Doe    , HireDate: 2018-04-01, Salary:   7500, Contact Number: 79991110011  , Date Of Birth: 1991-03-19, Gender: MALE
 Sean Freeman , Department: ACCOUNTING , Position: ACCOUNTANT         , Supervisor: Kara Black  , HireDate: 2021-11-07, Salary:   7750, Contact Number: 7779990099   , Date Of Birth: 1979-03-27, Gender: MALE
 Don Black    , Department: PRODUCTION , Position: MANAGER            , Supervisor: Alex White  , HireDate: 2014-04-30, Salary:   6500, Contact Number: 79995550055  , Date Of Birth: 2000-12-10, Gender: MALE
-rrrr         , Department: SALES      , Position: OTHER_STAFF        , Supervisor: John Doe    , HireDate: 2010-10-10, Salary:      3, Contact Number: 43643        , Date Of Birth: 2000-20-20, Gender: FEMALE

@@ -3,8 +3,9 @@ package EmployeeAccountingSystem.AccountingSystem;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static EmployeeAccountingSystem.ConsoleColors.Ansi.*;
-import static EmployeeAccountingSystem.AccountingSystem.Input.Input.inputValue;
+import static EmployeeAccountingSystem.AccountingSystem.Input.Input.digitInput;
+import static EmployeeAccountingSystem.ConsoleColors.Ansi.ANSI_PURPLE;
+import static EmployeeAccountingSystem.ConsoleColors.Ansi.ANSI_RESET;
 
 public class FireEmployee {
     static EmployeeManagementSystem system = new EmployeeManagementSystem();
@@ -15,24 +16,17 @@ public class FireEmployee {
         ArrayList<Employee> employees = system.uploadEmployeeInformation();
 
         System.out.println(ANSI_PURPLE + "~ FIRE A EMPLOYEE ~" + ANSI_RESET);
-        System.out.println("Input full name of employee: ");
-        String input = inputValue();
+        System.out.println("Input number of employee: ");
+        int index = (digitInput() - 1);
 
-//        for (Employee employee : employees) {
-//            if (employee.getFullName().equalsIgnoreCase(input)) {
-//                employees.remove(employee);
-//            }
-//        }
-        for (Employee e : employees) {
-            if(!e.getFullName().equals(input)) {
-                System.out.println("This employee wasn't found!");
-                fireEmployee();
-            } else {
-                employees.removeIf(employee -> employee.getFullName().equalsIgnoreCase(input));
-                System.out.println(WHITE_BRIGHT + "Employee " + input + " is fired." + ANSI_RESET);
-                system.safeEmployeeInformationToFile();
-            }
+        try {
+            employees.remove(employees.get(index));
+            System.out.println("is fired");
+            system.safeEmployeeInformationToFile();
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("This employees number not found!");
         }
+
 
     }
 }

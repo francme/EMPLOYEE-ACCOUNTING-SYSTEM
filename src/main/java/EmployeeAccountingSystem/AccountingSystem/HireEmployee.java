@@ -6,7 +6,6 @@ import EmployeeAccountingSystem.AccountingSystem.Enum.Position;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import static EmployeeAccountingSystem.ConsoleColors.Ansi.*;
 import static EmployeeAccountingSystem.AccountingSystem.Input.Input.*;
@@ -44,39 +43,79 @@ public class HireEmployee {
         String contactNumber = inputValue();
 
         Department department = null;
-        while (department == null) {
-            System.out.println("Input department:" +
-                    "\n[1] - CEO\n[2] - ACCOUNTING\n[3] - PRODUCTION\n[4] - SALES");
-            switch (digitInput()) {
-                case 1 -> department = Department.CEO;
-                case 2 -> department = Department.ACCOUNTING;
-                case 3 -> department = Department.PRODUCTION;
-                case 4 -> department = Department.SALES;
-                default -> System.out.println(ANSI_RED + "Invalid input!" + ANSI_RESET);
-            }
-        }
 
         Position position = null;
+        String supervisor = null;
         while (position == null) {
             System.out.println("Input position:" +
                     "\n[1] - CEO\n[2] - CHIEF_ACCOUNTANT\n[3] - ACCOUNTANT" +
                     "\n[4] - DEPARTMENT_MANAGER\n[5] - MANAGER" +
                     "\n[6] - MASTER\n[7] - OTHER_STAFF");
             switch (digitInput()) {
-                case 1 -> position = Position.CEO;
-                case 2 -> position = Position.CHIEF_ACCOUNTANT;
-                case 3 -> position = Position.ACCOUNTANT;
-                case 4 -> position = Position.DEPARTMENT_MANAGER;
-                case 5 -> position = Position.MANAGER;
-                case 6 -> position = Position.MASTER;
-                case 7 -> position = Position.OTHER_STAFF;
+                case 1 -> {
+                    position = Position.CEO;
+                    department = Department.CEO;
+                    supervisor = "not";
+                }
+                case 2 -> {
+                    position = Position.CHIEF_ACCOUNTANT;
+                    department = Department.ACCOUNTING;
+                    for (Employee employee : employees) {
+                        if (employee.getPosition().equals(Position.CEO)) {
+                            supervisor = employee.getFullName();
+                        }
+                    }
+                }
+                case 3 -> {
+                    position = Position.ACCOUNTANT;
+                    department = Department.ACCOUNTING;
+                    for (Employee employee : employees) {
+                        if (employee.getPosition().equals(Position.CHIEF_ACCOUNTANT)) {
+                            supervisor = employee.getFullName();
+                        }
+                    }
+                }
+                case 4 -> {
+                    position = Position.DEPARTMENT_MANAGER;
+                    department = Department.CEO;
+                    for (Employee employee : employees) {
+                        if (employee.getPosition().equals(Position.CEO)) {
+                            supervisor = employee.getFullName();
+                        }
+                    }
+                }
+                case 5 -> {
+                    position = Position.MANAGER;
+                    department = Department.SALES;
+                    for (Employee employee : employees) {
+                        if (employee.getDepartment().equals(Department.SALES) &&
+                                employee.getPosition().equals(Position.DEPARTMENT_MANAGER)) {
+                            supervisor = employee.getFullName();
+                        }
+                    }
+                }
+                case 6 -> {
+                    position = Position.MASTER;
+                    department = Department.PRODUCTION;
+                    for (Employee employee : employees) {
+                        if (employee.getDepartment().equals(Department.PRODUCTION) &&
+                                employee.getPosition().equals(Position.DEPARTMENT_MANAGER)) {
+                            supervisor = employee.getFullName();
+                        }
+                    }
+                }
+                case 7 -> {
+                    position = Position.OTHER_STAFF;
+                    department = Department.CEO;
+                    for (Employee employee : employees) {
+                        if (employee.getPosition().equals(Position.CEO)) {
+                            supervisor = employee.getFullName();
+                        }
+                    }
+                }
                 default -> System.out.println(ANSI_RED + "Invalid input!" + ANSI_RESET);
             }
         }
-
-        System.out.println("Input supervisor: ");
-        system.generateSupervisorsReport();
-        String supervisor = new Scanner(System.in).nextLine().trim();
 
         System.out.println("Input Date of hire <yyyy-mm-dd>: ");
         String dateOfHire = String.valueOf(dateInput());

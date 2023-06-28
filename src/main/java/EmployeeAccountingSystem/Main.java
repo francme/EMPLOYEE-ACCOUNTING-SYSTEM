@@ -3,7 +3,6 @@ package EmployeeAccountingSystem;
 import EmployeeAccountingSystem.AccountingSystem.EmployeeManagementSystem;
 
 import java.io.IOException;
-import java.text.ParseException;
 
 import java.util.Locale;
 
@@ -17,7 +16,7 @@ import static EmployeeAccountingSystem.AccountingSystem.Input.Input.*;
 
 public class Main {
 
-    public static void main(String[] args) throws ParseException, IOException {
+    public static void main(String[] args) throws IOException {
 
         // Создание объекта системы учета сотрудников
         EmployeeManagementSystem system = new EmployeeManagementSystem();
